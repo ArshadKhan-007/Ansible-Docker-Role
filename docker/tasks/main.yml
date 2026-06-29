@@ -18,6 +18,7 @@
 - name: Add user to docker group
   user:
     name: "{{ docker_user }}"
+    groups: docker
     append: yes
 
 - name: Start and Enable Docker
