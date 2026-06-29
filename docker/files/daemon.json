@@ -1,0 +1,12 @@
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "3"
+  },
+  "iptables": true,
+  "ip-forward": true,
+  "ip-masq": true,
+  "insecure-registries": [],
+  "registry-mirrors": []
+}
