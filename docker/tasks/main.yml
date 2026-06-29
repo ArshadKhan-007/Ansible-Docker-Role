@@ -10,6 +10,11 @@
     name: "{{ docker_packages }}"
     state: present
 
+- name: Ensure docker group exists
+  group:
+    name: docker
+    state: present
+
 - name: Add user to docker group
   user:
     name: "{{ docker_user }}"
@@ -20,4 +25,10 @@
     name: "{{ docker_service }}"
     state: started
     enabled: yes
+
+- name: Copy Docker daemon configuration
+  copy:
+    src: daemon.json
+    dest: /etc/docker/daemon.json
+  notify: Restart Docker
 
