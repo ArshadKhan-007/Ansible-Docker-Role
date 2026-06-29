@@ -1,0 +1,6 @@
+---
+# defaults file for docker
+
+docker_packages: docker.io
+docker_service: docker
+docker_user: ubuntu
